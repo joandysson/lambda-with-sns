@@ -1,4 +1,4 @@
-##Fake aws cnfiguration
+## Fake aws cnfiguration
 
 The network configuration needs to be same as the one used in sns as in the script `exec.sh`
 
