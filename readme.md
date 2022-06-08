@@ -1,6 +1,6 @@
 ## Fake aws cnfiguration
 
-The localtion configuration needs to be same when will be used in sns in the script `exec.sh`
+The region in configuration needs to be same when will be used in sns in the script `exec.sh`
 
 Run `aws configure` and add the following fakes credentials ony if you are't using anyone elses credentials
 
