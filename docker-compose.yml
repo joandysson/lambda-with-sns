@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack:latest
+    networks:
+      - default
+    ports:
+      - 4566:4566
+    environment:
+      - EDGE_PORT=4566
+      - SERVICES=sns,lambda
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+    environment:
+      discovery.type: "single-node"
+      ES_JAVA_OPTS: "-Xms2g -Xmx2g"
+      xpack.monitoring.enabled: "true"
+    ports:
+      - 9200:9200
+    networks:
+      - default
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.7.0
+    ports:
+      - 5601:5601
+    networks:
+      - default
+
+  # app:
+  #   container_name: app
+  #   image: node:16.15-alpine
+  #   ports:
+  #     - 3333:3333
+  #   volumes:
+  #     - ./:/app
+  #   working_dir: /app
+  #   entrypoint: 'sh'
+  #   networks:
+  #     - default
+
+networks:
+  default:
+    driver: bridge

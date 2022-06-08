@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "sns and lambda aws",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joandysson Gama",
+  "license": "ISC",
+  "dependencies": {
+    "elasticsearch": "^16.7.3"
+  }
+}
